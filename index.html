@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio CAO</title>
+  <meta name="description" content="Portfolio de conception mécanique sous SolidWorks.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316181D'/%3E%3Cpath d='M9 22V10h7a4 4 0 010 8H9' fill='none' stroke='%23fff' stroke-width='2.4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html" data-bind="profile.name"></a>
+      <nav class="nav">
+        <a href="#projets" data-i18n="nav.projects"></a>
+        <a href="#apropos" data-i18n="nav.about"></a>
+        <a href="#competences" data-i18n="nav.skills"></a>
+        <a href="#contact" data-i18n="nav.contact"></a>
+        <button class="lang-toggle" type="button" aria-label="Langue / Language"></button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <p class="status" data-show="profile.lookingFor"><span class="dot"></span><span data-bind="profile.lookingFor"></span></p>
+        <h1 data-bind="profile.name"></h1>
+        <p class="hero-title" data-bind="profile.title"></p>
+        <p class="hero-pitch" data-bind="profile.pitch"></p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projets" data-i18n="hero.seeProjects"></a>
+          <a class="btn" data-href="profile.cv" target="_blank" rel="noopener" data-i18n="hero.cv"></a>
+          <a class="btn" data-href="profile.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projets" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-num">01</span>
+          <h2 data-i18n="nav.projects"></h2>
+        </div>
+        <div class="filters" id="filters"></div>
+        <div class="grid" id="project-grid"></div>
+      </div>
+    </section>
+
+    <section id="apropos" class="section section-alt">
+      <div class="wrap about">
+        <div class="section-head">
+          <span class="section-num">02</span>
+          <h2 data-i18n="nav.about"></h2>
+        </div>
+        <div class="about-body">
+          <div class="about-text" id="about-text"></div>
+          <dl class="facts" id="facts"></dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="competences" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-num">03</span>
+          <h2 data-i18n="nav.skills"></h2>
+        </div>
+        <div class="skills" id="skills"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-alt">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-num">04</span>
+          <h2 data-i18n="nav.contact"></h2>
+        </div>
+        <p class="contact-lead" data-i18n="contact.lead"></p>
+        <div class="contact-links">
+          <a class="contact-card" data-href="profile.emailHref">
+            <span class="label" data-i18n="contact.email"></span>
+            <span class="value" data-bind="profile.email"></span>
+          </a>
+          <a class="contact-card" data-href="profile.linkedin" target="_blank" rel="noopener">
+            <span class="label">LinkedIn</span>
+            <span class="value" data-bind="profile.linkedinLabel"></span>
+          </a>
+          <a class="contact-card" data-href="profile.cv" target="_blank" rel="noopener">
+            <span class="label" data-i18n="contact.cvLabel"></span>
+            <span class="value" data-i18n="hero.cv"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> <span data-bind="profile.name"></span></span>
+      <span class="mono" data-i18n="footer.made"></span>
+    </div>
+  </footer>
+
+  <script src="js/content.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

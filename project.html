@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projet</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316181D'/%3E%3Cpath d='M9 22V10h7a4 4 0 010 8H9' fill='none' stroke='%23fff' stroke-width='2.4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="project-page">
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html" data-bind="profile.name"></a>
+      <nav class="nav">
+        <a href="index.html#projets" data-i18n="project.back"></a>
+        <button class="lang-toggle" type="button" aria-label="Langue / Language"></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="project-root">
+    <article class="wrap project">
+      <a class="back-link mono" href="index.html#projets">← <span data-i18n="project.back"></span></a>
+
+      <header class="project-head">
+        <p class="project-num mono" id="p-num"></p>
+        <h1 id="p-title"></h1>
+        <p class="project-summary" id="p-summary"></p>
+        <div class="tags" id="p-tags"></div>
+      </header>
+
+      <section class="viewer-block" id="viewer-block">
+        <div class="viewer" id="viewer">
+          <div class="viewer-poster" id="viewer-poster">
+            <button class="btn btn-primary" id="load-model" type="button" data-i18n="viewer.load"></button>
+            <p class="viewer-hint mono" id="viewer-hint"></p>
+          </div>
+          <div class="viewer-overlay" id="viewer-overlay" hidden>
+            <div class="spinner"></div>
+            <p id="viewer-status" data-i18n="viewer.loading"></p>
+          </div>
+          <div class="viewer-tools" id="viewer-tools" hidden>
+            <button type="button" data-action="reset" data-i18n-title="viewer.reset" aria-label="Reset">
+              <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4"/></svg>
+            </button>
+            <button type="button" data-action="edges" data-i18n-title="viewer.edges" aria-label="Edges">
+              <svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>
+            </button>
+            <button type="button" data-action="rotate" data-i18n-title="viewer.rotate" aria-label="Auto-rotate">
+              <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg>
+            </button>
+            <button type="button" data-action="fullscreen" data-i18n-title="viewer.fullscreen" aria-label="Fullscreen">
+              <svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+          </div>
+        </div>
+        <p class="viewer-caption mono" data-i18n="viewer.controls"></p>
+      </section>
+
+      <div class="project-body">
+        <div class="project-sections" id="p-sections"></div>
+        <aside class="project-specs">
+          <h2 class="mono" data-i18n="project.specs"></h2>
+          <dl id="p-specs"></dl>
+        </aside>
+      </div>
+
+      <section class="gallery-block" id="gallery-block" hidden>
+        <h2 data-i18n="project.gallery"></h2>
+        <div class="gallery" id="p-gallery"></div>
+      </section>
+
+      <nav class="project-nav" id="p-nav"></nav>
+    </article>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" type="button" aria-label="Fermer">×</button>
+    <img alt="">
+    <p class="lightbox-caption"></p>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> <span data-bind="profile.name"></span></span>
+      <span class="mono" data-i18n="footer.made"></span>
+    </div>
+  </footer>
+
+  <script src="js/content.js"></script>
+  <script src="js/main.js"></script>
+  <script type="module" src="js/project.js"></script>
+</body>
+</html>

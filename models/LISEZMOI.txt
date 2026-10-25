@@ -1,0 +1,1 @@
+Dépose ici tes fichiers .step / .stp (ou .glb / .stl), puis renseigne model: "models/nom.step" dans js/content.js.
