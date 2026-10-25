@@ -19,6 +19,8 @@ function render() {
   const q = window.Portfolio.lang === "fr" ? "" : "&lang=en";
   document.title = tr(project.title) + " — " + tr(DATA.profile.name);
 
+  const banner = project.banner || project.cover;
+  document.getElementById("p-banner").style.backgroundImage = banner ? `url("${banner}")` : "";
   document.getElementById("p-num").textContent = `P-${project.number || ""} · ${project.year || ""}${project.context ? " · " + tr(project.context) : ""}`;
   document.getElementById("p-title").textContent = tr(project.title);
   document.getElementById("p-summary").textContent = tr(project.summary);
@@ -50,28 +52,17 @@ function renderViewerChrome() {
   const poster = document.getElementById("viewer-poster");
   const btn = document.getElementById("load-model");
   const hint = document.getElementById("viewer-hint");
-  const caption = document.querySelector(".viewer-caption");
   const cover = project.poster || project.cover;
-  if (cover) poster.style.backgroundImage = `url("${cover}")`;
 
-  if (model === false) {
-    // Pas de fichier 3D : la couverture s'affiche en grand, sans contrôles
-    btn.hidden = true;
-    hint.textContent = "";
-    caption.hidden = true;
-    poster.classList.remove("has-image");
-    document.getElementById("viewer-block").hidden = !cover;
-  } else {
-    if (cover) poster.classList.add("has-image");
-    btn.hidden = !model;
-    btn.textContent = ui("viewer.load");
-    caption.hidden = false;
-    if (model) {
-      const ext = model.url.split(".").pop().toUpperCase();
-      const size = window.Portfolio.formatSize(model.bytes);
-      hint.textContent = ext + (size ? " · " + ui("viewer.size").replace("{size}", size) : "");
-    }
-  }
+  // La visionneuse n'apparaît que si un fichier 3D existe
+  document.getElementById("viewer-block").hidden = !model;
+  if (!model) return;
+
+  if (cover) { poster.style.backgroundImage = `url("${cover}")`; poster.classList.add("has-image"); }
+  btn.textContent = ui("viewer.load");
+  const ext = model.url.split(".").pop().toUpperCase();
+  const size = window.Portfolio.formatSize(model.bytes);
+  hint.textContent = ext + (size ? " · " + ui("viewer.size").replace("{size}", size) : "");
 
   const status = document.getElementById("viewer-status");
   if (viewerState === "downloading") status.textContent = ui("viewer.loading");

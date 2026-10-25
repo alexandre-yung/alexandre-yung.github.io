@@ -96,6 +96,7 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
         en: "Redesign of an energy-absorbing safety part after it failed in a rally: 38% lighter, FEA-validated and now racing."
       },
       tags: ["SolidWorks", "FEA", "GD&T"],
+      banner: "images/crash-box/cover.jpg",
       cover: "images/crash-box/cover.jpg",
       model: "",
       specs: [
@@ -150,6 +151,7 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
         en: "Water pump housing for the Maverick R engine, plus an in-house Dash 16 – M32×1.5 fitting that halves the cost of the off-the-shelf adapter."
       },
       tags: ["SolidWorks", { fr: "Réduction de coût", en: "Cost reduction" }, "DFM"],
+      banner: "images/water-pump-housing/dash16.jpg",
       cover: "images/water-pump-housing/cover.jpg",
       model: "",
       specs: [
@@ -175,7 +177,8 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
       ],
       gallery: [
         { src: "images/water-pump-housing/cover.jpg", caption: { fr: "Carter de pompe à eau, modèle CAO", en: "Water pump housing, CAD model" } },
-        { src: "images/water-pump-housing/section.jpg", caption: { fr: "Coupe : sortie taraudée M32×1,5", en: "Section view: M32×1.5 threaded outlet" } }
+        { src: "images/water-pump-housing/section.jpg", caption: { fr: "Coupe : sortie taraudée M32×1,5", en: "Section view: M32×1.5 threaded outlet" } },
+        { src: "images/water-pump-housing/dash16.jpg", caption: { fr: "Raccord Dash 16 – M32×1,5 produit", en: "Manufactured Dash 16 – M32×1.5 fitting" } }
       ]
     },
     {
@@ -189,6 +192,7 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
         en: "Full reverse engineering of the T3 exhaust line: 5 bent tubes, flex section, silencer and mounts, turned into production-ready CAD."
       },
       tags: ["SolidWorks", { fr: "Rétro-ingénierie", en: "Reverse engineering" }],
+      banner: "images/t3-exhaust/cover.jpg",
       cover: "images/t3-exhaust/cover.jpg",
       model: "",
       specs: [
@@ -223,41 +227,52 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
       number: "04",
       year: "2026",
       context: "South Racing · Can-Am T3",
-      title: { fr: "Durite filtre à air → turbo", en: "Air filter to turbo pipe" },
+      title: { fr: "Durite filtre à air → turbo : étude CFD", en: "Air filter to turbo pipe: CFD study" },
       summary: {
-        fr: "Étude CFD du conduit d'admission entre le filtre à air et la bride du turbo, recalée sur des mesures réelles, pour savoir si un nouveau design valait l'effort.",
-        en: "CFD study of the intake duct between the air filter and the turbo restrictor, calibrated on real measurements, to find out whether a new design was worth it."
+        fr: "Simulation de mécanique des fluides sous Ansys Fluent du conduit d'admission du T3 : trois géométries comparées, puis un modèle recalé sur des mesures de banc pour décider si une nouvelle pièce valait l'effort.",
+        en: "Ansys Fluent CFD study of the T3 intake duct: three geometries compared, then a model calibrated on bench measurements to decide whether a new part was worth it."
       },
-      tags: ["SolidWorks", "CFD"],
+      tags: ["CFD", "SolidWorks"],
+      banner: "images/air-intake-pipe/banner.jpg",
       cover: "images/air-intake-pipe/cover.jpg",
       model: "",
       specs: [
-        { label: { fr: "Rôle", en: "Role" }, value: { fr: "Modélisation, simulation CFD", en: "Modelling, CFD simulation" } },
+        { label: { fr: "Rôle", en: "Role" }, value: { fr: "Modélisation, simulation CFD, analyse", en: "Modelling, CFD simulation, analysis" } },
         { label: { fr: "Outils", en: "Tools" }, value: "SolidWorks · Ansys Fluent" },
-        { label: { fr: "Bride", en: "Restrictor" }, value: { fr: "Ø 28,5 mm", en: "Ø28.5 mm" } },
+        { label: { fr: "Bride", en: "Restrictor" }, value: { fr: "Ø 28,5 mm (règlement T3)", en: "Ø28.5 mm (T3 regulations)" } },
+        { label: { fr: "Maillage", en: "Mesh" }, value: { fr: "Éléments de 5 mm", en: "5 mm elements" } },
+        { label: { fr: "Géométries", en: "Geometries" }, value: { fr: "3 versions comparées", en: "3 versions compared" } },
         { label: { fr: "Débits simulés", en: "Simulated mass flow" }, value: { fr: "0,125 et 0,141 kg/s", en: "0.125 and 0.141 kg/s" } },
         { label: { fr: "Perte de charge", en: "Pressure drop" }, value: { fr: "≈ 67 Pa (pression totale)", en: "≈ 67 Pa (total pressure)" } }
       ],
       sections: [
         { title: { fr: "La question", en: "The question" }, body: {
-          fr: "En T3, l'air passe par une bride de 28,5 mm imposée par le règlement avant d'entrer dans le turbo. La durite entre le filtre et la bride crée-t-elle une perte de charge suffisante pour justifier une nouvelle pièce ?",
-          en: "In T3, the air goes through a 28.5 mm restrictor required by the regulations before entering the turbo. Does the duct between the filter and the restrictor cause enough pressure loss to justify a new part?"
+          fr: "En catégorie T3, tout l'air du moteur passe par une bride de 28,5 mm imposée par le règlement avant d'entrer dans le turbo. Entre le filtre à air et cette bride, la durite d'origine fait un coude serré. La question posée : ce coude crée-t-il assez de perte de charge et de turbulence pour justifier une nouvelle pièce ?",
+          en: "In the T3 class, all the engine's air goes through a 28.5 mm restrictor required by the regulations before entering the turbo. Between the air filter and that restrictor, the stock hose makes a tight bend. The question: does that bend cause enough pressure loss and turbulence to justify a new part?"
         }},
-        { title: { fr: "Première approche", en: "First approach" }, body: {
-          fr: "Premier modèle Ansys Fluent : entrée en pression atmosphérique, sortie en débit massique. Le débit était estimé à partir du moteur (2,0 L, 7 000 tr/min, rendement volumétrique 0,9, rapport de pression 4), soit environ 0,46 kg/s.",
-          en: "First Ansys Fluent model: atmospheric pressure inlet, mass-flow outlet. The flow was estimated from the engine (2.0 L, 7,000 rpm, 0.9 volumetric efficiency, pressure ratio 4), giving about 0.46 kg/s."
+        { title: { fr: "Mise en place de la simulation", en: "Simulation set-up" }, body: {
+          fr: "- Volume fluide extrait de la CAO du conduit (filtre → bride)\n- Maillage du domaine avec des éléments de 5 mm\n- Entrée en pression atmosphérique (pression totale relative de 0 Pa), côté filtre\n- Sortie en débit massique imposé, côté turbo\n- Post-traitement : lignes de courant, champ de pression, profil de vitesse et énergie cinétique turbulente dans la section de sortie",
+          en: "- Fluid volume extracted from the duct CAD (filter → restrictor)\n- Domain meshed with 5 mm elements\n- Atmospheric pressure inlet (0 Pa gauge total pressure) on the filter side\n- Imposed mass-flow outlet on the turbo side\n- Post-processing: pathlines, pressure field, velocity profile and turbulent kinetic energy across the outlet section"
         }},
-        { title: { fr: "Recalage sur mesures réelles", en: "Calibration on real data" }, body: {
-          fr: "Un ingénieur partenaire nous a transmis des mesures de banc (débit et perte de charge de la bride, seule et avec la durite d'origine). Ces mesures ont montré que le premier débit était surestimé. La simulation a donc été corrigée :\n\n- Débit en régime de course : 450 kg/h, soit 0,125 kg/s\n- Débit maximal, bride saturée : 510 kg/h, soit 0,141 kg/s\n- L'écoulement atteint Mach 1 dans la bride, donc l'air est modélisé en gaz parfait compressible",
-          en: "A partner engineer shared bench measurements (mass flow and pressure drop of the restrictor alone and with the stock hose). They showed the first estimate was too high, so the simulation was corrected:\n\n- Race regime flow: 450 kg/h, i.e. 0.125 kg/s\n- Maximum flow, choked restrictor: 510 kg/h, i.e. 0.141 kg/s\n- The flow reaches Mach 1 in the restrictor, so the air is modelled as a compressible ideal gas"
+        { title: { fr: "Trois géométries comparées", en: "Three geometries compared" }, body: {
+          fr: "Trois versions du conduit ont été simulées dans les mêmes conditions : le modèle de départ, puis deux variantes (V2 et V3) qui modifient le tracé du coude.\n\nPour chacune, j'ai comparé les lignes de courant (zones d'accélération et de décollement dans le coude), la répartition de pression le long du conduit, et surtout ce qui arrive au turbo : l'homogénéité du profil de vitesse et le niveau de turbulence dans la section de sortie. Les vitesses maximales atteignent environ 22 m/s dans le coude.",
+          en: "Three versions of the duct were simulated under the same conditions: the starting model, then two variants (V2 and V3) changing the bend's path.\n\nFor each one I compared the pathlines (acceleration and separation zones in the bend), the pressure distribution along the duct, and above all what reaches the turbo: how uniform the velocity profile is and how much turbulence there is across the outlet section. Peak velocities reach about 22 m/s in the bend."
+        }},
+        { title: { fr: "Remettre en cause l'hypothèse de débit", en: "Challenging the mass-flow assumption" }, body: {
+          fr: "Le débit de départ venait d'un calcul théorique sur le moteur (2,0 L, 7 000 tr/min, rendement volumétrique 0,9, rapport de pression 4), soit environ 0,46 kg/s. Un ingénieur partenaire nous a transmis des mesures de banc : débit et perte de charge de la bride, seule puis avec la durite d'origine. Elles ont montré que ce débit était largement surestimé, car la bride limite le débit bien avant. La simulation a donc été corrigée :\n\n- Débit en régime de course : 450 kg/h, soit 0,125 kg/s\n- Débit maximal, bride saturée : 510 kg/h, soit 0,141 kg/s\n- L'écoulement atteint Mach 1 dans la bride : l'air n'est plus modélisé à densité constante mais en gaz parfait compressible",
+          en: "The starting mass flow came from a theoretical engine calculation (2.0 L, 7,000 rpm, 0.9 volumetric efficiency, pressure ratio 4), about 0.46 kg/s. A partner engineer shared bench measurements: mass flow and pressure drop of the restrictor alone, then with the stock hose. They showed this flow was heavily overestimated, because the restrictor caps the flow long before. The simulation was corrected:\n\n- Race regime flow: 450 kg/h, i.e. 0.125 kg/s\n- Maximum flow, choked restrictor: 510 kg/h, i.e. 0.141 kg/s\n- The flow reaches Mach 1 in the restrictor, so air is no longer modelled at constant density but as a compressible ideal gas"
         }},
         { title: { fr: "Conclusion", en: "Conclusion" }, body: {
-          fr: "La perte de pression totale moyenne dans la durite est d'environ 67 Pa, faible devant celle du filtre et de la bride. Redessiner la durite n'apporterait presque rien : garder l'air d'admission le plus frais possible a bien plus d'effet sur la performance moteur. L'étude a évité de lancer une pièce inutile.",
-          en: "The average total pressure loss in the duct is about 67 Pa, small compared with the filter and the restrictor. Redesigning the duct would gain almost nothing; keeping intake air as cool as possible matters far more for engine performance. The study avoided launching an unnecessary part."
+          fr: "Avec les débits réels, la perte de pression totale moyenne dans la durite est d'environ 67 Pa, faible devant celle du filtre et de la bride. Le gain possible en redessinant la durite est donc limité : garder l'air d'admission le plus frais possible a bien plus d'effet sur la performance moteur. L'étude a permis de prendre cette décision sur des chiffres plutôt que sur une intuition.",
+          en: "With the real flow rates, the average total pressure loss in the duct is about 67 Pa, small compared with the filter and the restrictor. The possible gain from redesigning the duct is therefore limited; keeping intake air as cool as possible matters far more for engine performance. The study let the team make that call on numbers rather than gut feeling."
         }}
       ],
       gallery: [
-        { src: "images/air-intake-pipe/cover.jpg", caption: { fr: "Lignes de courant et pression statique (Ansys Fluent)", en: "Pathlines and static pressure (Ansys Fluent)" } }
+        { src: "images/air-intake-pipe/cover.jpg", caption: { fr: "Lignes de courant et pression statique", en: "Pathlines and static pressure" } },
+        { src: "images/air-intake-pipe/v1-velocity.jpg", caption: { fr: "Modèle de départ : vitesse le long des lignes de courant", en: "Starting model: velocity along pathlines" } },
+        { src: "images/air-intake-pipe/v3-velocity.jpg", caption: { fr: "Version 3 : vitesse le long des lignes de courant", en: "Version 3: velocity along pathlines" } },
+        { src: "images/air-intake-pipe/outlet-velocity.jpg", caption: { fr: "Profil de vitesse dans la section de sortie", en: "Velocity profile across the outlet" } },
+        { src: "images/air-intake-pipe/outlet-turbulence.jpg", caption: { fr: "Énergie cinétique turbulente en sortie", en: "Turbulent kinetic energy at the outlet" } }
       ]
     },
     {
@@ -272,6 +287,7 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
         en: "3-piece FDM-printed gauge that detects radial rim deformation, refined through tolerance iterations and used in the workshop."
       },
       tags: ["SolidWorks", { fr: "Impression 3D", en: "3D printing" }, { fr: "Tolérancement", en: "Tolerancing" }],
+      banner: "images/rim-check-tool/cover.jpg",
       cover: "images/rim-check-tool/cover.jpg",
       model: "",
       specs: [
@@ -298,6 +314,55 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
       gallery: [
         { src: "images/rim-check-tool/cover.jpg", caption: { fr: "Outil imprimé en place sur une jante", en: "Printed tool in place on a rim" } },
         { src: "images/rim-check-tool/drawing.jpg", caption: { fr: "Mise en plan du bras de mesure", en: "Drawing of the measuring arm" } }
+      ]
+    },
+    {
+      id: "rim-scraper",
+      number: "06",
+      year: "2026",
+      context: "South Racing · Can-Am Maverick R",
+      title: { fr: "Rim scraper : protection des porte-moyeux", en: "Rim scraper: upright protection" },
+      summary: {
+        fr: "Racleur qui évacue les cailloux coincés dans la jante avant qu'ils n'abîment le porte-moyeu et l'étrier. Conçu en partant d'une page blanche : benchmark, deux versions, un ensemble de 7 pièces adapté à trois types de jantes.",
+        en: "Scraper that clears rocks trapped inside the rim before they damage the upright and caliper. Designed from a blank page: benchmark, two versions, a 7-part assembly adapted to three rim types."
+      },
+      tags: ["SolidWorks", "Benchmark"],
+      banner: "images/rim-scraper/cover.jpg",
+      cover: "images/rim-scraper/cover.jpg",
+      model: "",
+      specs: [
+        { label: { fr: "Rôle", en: "Role" }, value: { fr: "R&D, benchmark, conception, prototype", en: "R&D, benchmark, design, prototype" } },
+        { label: { fr: "Outils", en: "Tools" }, value: "SolidWorks" },
+        { label: { fr: "Ensemble", en: "Assembly" }, value: { fr: "7 pièces : corps gauche/droit, renfort, fixation, 3 lames", en: "7 parts: left/right bodies, reinforcement, fixer, 3 blades" } },
+        { label: { fr: "Lame d'usure", en: "Wear blade" }, value: { fr: "PEHD, une variante par jante", en: "HDPE, one variant per rim" } },
+        { label: { fr: "Jantes couvertes", en: "Rims covered" }, value: "Braid · Evo Corse · Raceline" },
+        { label: { fr: "Statut", en: "Status" }, value: { fr: "Monté sur véhicule", en: "Fitted to the car" } }
+      ],
+      sections: [
+        { title: { fr: "Le problème", en: "The problem" }, body: {
+          fr: "En rallye-raid, cailloux et boue s'accumulent à l'intérieur de la jante. Coincés entre la jante et le porte-moyeu, ils usent ou cassent l'étrier, le porte-moyeu et la jante elle-même. Le cahier des charges : concevoir un racleur et une protection de jante au moins aussi efficaces que les meilleures solutions existantes, produire un prototype, le tester, l'ajuster puis lancer la production.",
+          en: "In rally-raid, rocks and mud build up inside the rim. Trapped between the rim and the upright, they wear or break the caliper, the upright and the rim itself. The brief: design a scraper and rim protection at least as effective as the best existing solutions, build a prototype, test it, adjust it, then release it to production."
+        }},
+        { title: { fr: "Partir d'une page blanche : le benchmark", en: "Starting from a blank page: benchmark" }, body: {
+          fr: "Aucune pièce n'existait dans l'équipe. J'ai d'abord étudié les solutions du marché sur SSV et voitures de rallye, pour en tirer des principes de conception :\n\n- Un racleur fixé sur un point existant (étrier ou porte-moyeu), 100 % boulonné, sans modifier le véhicule\n- Une forme inclinée qui éjecte les débris hors de la jante, plutôt qu'une plaque perpendiculaire où la boue s'accumule jusqu'à la casse\n- Des bords arrondis pour laisser s'échapper les petits cailloux\n- Une pièce d'usure sacrificielle en polyéthylène (PEHD) au contact de la jante, la structure restant en acier\n- Un jeu qui dépend du modèle de jante : la pièce d'usure doit s'adapter à chacune",
+          en: "The team had no such part. I first studied the solutions on the market for SSVs and rally cars, to extract design principles:\n\n- A scraper mounted on an existing point (caliper or upright), fully bolt-on, with no change to the vehicle\n- An angled shape that ejects debris out of the rim, instead of a perpendicular plate where mud builds up until it breaks\n- Rounded edges so small rocks can escape\n- A sacrificial polyethylene (HDPE) wear part in contact with the rim, with a steel structure behind it\n- A clearance that depends on the rim model, so the wear part has to be adapted to each one"
+        }},
+        { title: { fr: "Conception et itérations", en: "Design and iterations" }, body: {
+          fr: "- V1 : corps fixé sur le porte-moyeu, avec un jeu de 26,75 mm côté intérieur et 19,07 mm côté extérieur par rapport à la jante\n- V2 : angle d'attaque porté de 110° à 130° pour mieux éjecter les débris, et renfort soudé ajouté\n- Ensemble final de 7 pièces : corps gauche et droit, renfort, fixation de la lame, et trois lames PEHD\n- Une lame par type de jante : la version de base convient à la jante Braid, une lame plus longue côté extérieur pour l'Evo Corse, une autre adaptée à la Raceline",
+          en: "- V1: body mounted on the upright, with 26.75 mm of clearance on the inside and 19.07 mm on the outside relative to the rim\n- V2: attack angle increased from 110° to 130° to eject debris better, and a welded reinforcement added\n- Final 7-part assembly: left and right bodies, reinforcement, blade fixer, and three HDPE blades\n- One blade per rim type: the base version fits the Braid rim, a longer outer blade for the Evo Corse, another adapted to the Raceline"
+        }},
+        { title: { fr: "Résultat", en: "Outcome" }, body: {
+          fr: "La dernière version est montée sur le véhicule. La lame PEHD s'use à la place de la jante et du porte-moyeu et se remplace facilement, et une même structure couvre les trois modèles de jantes utilisés par l'équipe.",
+          en: "The latest version is fitted to the car. The HDPE blade wears instead of the rim and upright and is easy to replace, and a single structure covers the three rim models used by the team."
+        }}
+      ],
+      gallery: [
+        { src: "images/rim-scraper/cover.jpg", caption: { fr: "Dernière version montée dans la roue", en: "Latest version fitted in the wheel" } },
+        { src: "images/rim-scraper/installed.jpg", caption: { fr: "Racleur en place derrière la jante", en: "Scraper in place behind the rim" } },
+        { src: "images/rim-scraper/cad-latest.jpg", caption: { fr: "Dernière version : corps acier et lame PEHD", en: "Latest version: steel body and HDPE blade" } },
+        { src: "images/rim-scraper/cad-wheel.jpg", caption: { fr: "Intégration dans la roue et le porte-moyeu", en: "Integration in the wheel and upright" } },
+        { src: "images/rim-scraper/cad-v2.jpg", caption: { fr: "V2 : angle porté à 130°", en: "V2: angle increased to 130°" } },
+        { src: "images/rim-scraper/cad-v1.jpg", caption: { fr: "V1 sur le porte-moyeu", en: "V1 on the upright" } }
       ]
     }
   ]
