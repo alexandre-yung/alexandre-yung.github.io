@@ -27,7 +27,7 @@ portfolio/
 
 3. C'est tout : le site détecte le fichier tout seul. Le badge « Modèle 3D » apparaît sur la carte, et sur la page du projet le modèle se charge dès qu'il est visible à l'écran. Le visiteur peut le faire tourner, zoomer, afficher les arêtes ou passer en plein écran.
 
-Les extensions `.stp`, `.glb` et `.stl` marchent aussi. Pour utiliser un autre nom de fichier, renseigne `model: "models/mon-fichier.step"` dans `js/content.js`.
+Un fichier `.glb` portant le même nom est détecté aussi. Pour un autre nom ou une autre extension (`.stp`, `.stl`), renseigne `model: "models/mon-fichier.stp"` dans `js/content.js`.
 
 **Conseils**
 - Vise **moins de 20 Mo** par fichier : la conversion prend quelques secondes au-delà. GitHub refuse les fichiers de plus de 100 Mo.

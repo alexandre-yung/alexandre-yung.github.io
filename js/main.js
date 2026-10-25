@@ -108,8 +108,8 @@
     }).join("");
   }
 
-  // Modèle 3D : celui indiqué dans content.js, sinon models/<id>.step (ou .stp, .glb, .stl) s'il existe.
-  const MODEL_EXTS = ["step", "stp", "STEP", "STP", "glb", "stl"];
+  // Modèle 3D : celui indiqué dans content.js, sinon models/<id>.step ou models/<id>.glb s'il existe.
+  const MODEL_EXTS = ["step", "glb"];
   const modelCache = {};
   function findModel(p) {
     if (!modelCache[p.id]) {
