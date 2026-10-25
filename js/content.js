@@ -5,6 +5,7 @@
    - Dans les "body" : une ligne vide = nouveau paragraphe ; des lignes commençant par "- " = liste à puces.
    - Ajouter un modèle 3D : déposer le fichier dans le dossier models/ puis renseigner
        model: "models/mon-fichier.step"   (formats acceptés : .step .stp .glb .gltf .stl)
+   - Modèle mal orienté ? Ajouter au projet  modelUp: "z"  (couché/debout, Z vers le haut) ou  modelUp: "-y"  (à l'envers).
    - Ajouter des images : les déposer dans images/<id-du-projet>/ puis renseigner cover et gallery.
    ========================================================================== */
 
@@ -85,6 +86,7 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
   projects: [
     {
       id: "crash-box",
+      modelUp: "z",
       number: "01",
       year: "2026",
       context: "South Racing · Can-Am T3/T4",
@@ -260,6 +262,7 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
     },
     {
       id: "rim-check-tool",
+      modelUp: "-y",
       number: "05",
       year: "2026",
       context: "South Racing · Can-Am T3/T4",

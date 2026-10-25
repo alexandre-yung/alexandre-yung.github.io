@@ -89,7 +89,7 @@ async function loadModel() {
   renderViewerChrome();
   try {
     const { mountViewer } = await import("./viewer.js");
-    viewer = await mountViewer(el, model.url, state => { viewerState = state; renderViewerChrome(); });
+    viewer = await mountViewer(el, model.url, state => { viewerState = state; renderViewerChrome(); }, { up: project.modelUp });
     overlay.hidden = true;
     document.getElementById("viewer-tools").hidden = false;
   } catch (err) {

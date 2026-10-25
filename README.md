@@ -33,6 +33,8 @@ Un fichier `.glb` portant le même nom est détecté aussi. Pour un autre nom ou
 - Vise **moins de 20 Mo** par fichier : la conversion prend quelques secondes au-delà. GitHub refuse les fichiers de plus de 100 Mo.
 - Pour un gros assemblage, supprime la visserie et les pièces du commerce avant l'export, ou exporte en **.glb**, qui est plus léger et s'affiche instantanément.
 - Il n'y a pas de bouton de téléchargement, mais un fichier publié sur un site reste techniquement récupérable.
+- **Attention au nom** : sur Mac, le Finder cache souvent l'extension. Si tu tapes `crash-box.step` alors que SolidWorks a déjà ajouté `.STEP`, le fichier devient `crash-box.step.STEP` et n'est pas détecté. Sur GitHub, vérifie que le nom se termine par un seul `.step`.
+- **Modèle mal orienté** (debout, couché ou à l'envers) : ajoute `modelUp: "z"` ou `modelUp: "-y"` au projet dans `js/content.js`.
 
 ## Ajouter des images
 

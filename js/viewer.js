@@ -91,8 +91,9 @@ function parseStl(buffer) {
 /**
  * Monte le visualiseur dans `container` et charge `url`.
  * onStatus(state) : "downloading" | "converting" | "ready"
+ * options.up : axe du fichier qui doit pointer vers le haut : "y" (défaut), "-y" (retourné), "z" (CAO véhicule), "-z"
  */
-export async function mountViewer(container, url, onStatus = () => {}) {
+export async function mountViewer(container, url, onStatus = () => {}, options = {}) {
   const scene = new THREE.Scene();
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: false });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -121,6 +122,11 @@ export async function mountViewer(container, url, onStatus = () => {}) {
   else if (ext === "stl") model = parseStl(buffer);
   else throw new Error("Format non pris en charge : ." + ext);
 
+  // Axe "vers le haut" du fichier : rotation autour de X pour le ramener sur l'axe Y de la scène
+  const UP_ROTATION = { "y": 0, "-y": Math.PI, "z": -Math.PI / 2, "-z": Math.PI / 2 };
+  model.rotation.x = UP_ROTATION[options.up] || 0;
+  model.updateMatrixWorld(true);
+
   // Centre le modèle et le pose sur la grille
   const box = new THREE.Box3().setFromObject(model);
   const size = box.getSize(new THREE.Vector3());
@@ -148,16 +154,33 @@ export async function mountViewer(container, url, onStatus = () => {}) {
   camera.far = radius * 200;
   camera.updateProjectionMatrix();
 
+  // Coins de la boîte englobante, une fois le modèle posé sur la grille
+  const corners = [];
+  for (const x of [-size.x / 2, size.x / 2]) for (const y of [0, size.y]) for (const z of [-size.z / 2, size.z / 2]) {
+    corners.push(new THREE.Vector3(x, y, z));
+  }
+
+  // Recule la caméra juste assez pour que toute la pièce tienne dans le cadre
   function resetView() {
-    const dist = radius / Math.sin(THREE.MathUtils.degToRad(camera.fov / 2)) * 1.15;
     const dir = new THREE.Vector3(1, 0.7, 1.2).normalize();
+    const forward = dir.clone().negate();
+    const right = new THREE.Vector3().crossVectors(forward, new THREE.Vector3(0, 1, 0)).normalize();
+    const up = new THREE.Vector3().crossVectors(right, forward);
+    const tanV = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+    const tanH = tanV * camera.aspect;
+    let dist = 0;
+    for (const c of corners) {
+      const p = c.clone().sub(target);
+      const depth = p.dot(dir);
+      dist = Math.max(dist, depth + Math.abs(p.dot(right)) / tanH, depth + Math.abs(p.dot(up)) / tanV);
+    }
+    dist *= 1.1;
     camera.position.copy(target).addScaledVector(dir, dist);
     controls.target.copy(target);
     controls.minDistance = radius * 0.3;
     controls.maxDistance = dist * 4;
     controls.update();
   }
-  resetView();
 
   // Arêtes (calculées à la demande)
   let edges = null;
@@ -190,6 +213,7 @@ export async function mountViewer(container, url, onStatus = () => {}) {
   }
   new ResizeObserver(resize).observe(container);
   resize();
+  resetView();
 
   renderer.setAnimationLoop(() => {
     controls.update();
