@@ -328,7 +328,7 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
       },
       tags: ["SolidWorks", "Benchmark"],
       banner: "images/rim-scraper/cover.jpg",
-      cover: "images/rim-scraper/cover.jpg",
+      cover: "images/rim-scraper/cad-wheel.jpg",
       model: "",
       specs: [
         { label: { fr: "Rôle", en: "Role" }, value: { fr: "R&D, benchmark, conception, prototype", en: "R&D, benchmark, design, prototype" } },
@@ -357,7 +357,6 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
         }}
       ],
       gallery: [
-        { src: "images/rim-scraper/cover.jpg", caption: { fr: "Dernière version montée dans la roue", en: "Latest version fitted in the wheel" } },
         { src: "images/rim-scraper/installed.jpg", caption: { fr: "Racleur en place derrière la jante", en: "Scraper in place behind the rim" } },
         { src: "images/rim-scraper/cad-latest.jpg", caption: { fr: "Dernière version : corps acier et lame PEHD", en: "Latest version: steel body and HDPE blade" } },
         { src: "images/rim-scraper/cad-wheel.jpg", caption: { fr: "Intégration dans la roue et le porte-moyeu", en: "Integration in the wheel and upright" } },
