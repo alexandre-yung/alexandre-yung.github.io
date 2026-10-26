@@ -57,21 +57,14 @@ h1, h2, h3 { line-height: 1.2; margin: 0; letter-spacing: -0.02em; }
 
 /* ---------- Hero ---------- */
 .hero {
-  position: relative;
-  border-bottom: 1px solid var(--line);
-  background-color: var(--paper);
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 32px 32px;
-  background-position: -1px -1px;
-}
-.hero::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(ellipse at 30% 40%, rgba(250,250,248,0.2), var(--paper) 75%);
+  position: relative; color: #fff;
+  background:
+    radial-gradient(60% 90% at 85% 50%, rgba(31, 79, 216, 0.45), transparent 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(31, 79, 216, 0.18), transparent 70%),
+    #121419;
 }
 .hero-inner { position: relative; z-index: 1; padding-top: 88px; padding-bottom: 88px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 56px; align-items: center; }
-.hero-photo { margin: 0; width: 240px; height: 240px; border-radius: 50%; overflow: hidden; border: 6px solid var(--surface); box-shadow: 0 0 0 1px var(--line-strong), 0 18px 40px -20px rgba(22,24,29,0.35); background: var(--alt); }
+.hero-photo { margin: 0; width: 240px; height: 240px; border-radius: 50%; overflow: hidden; border: 6px solid rgba(255,255,255,0.12); box-shadow: 0 0 0 1px rgba(255,255,255,0.15), 0 20px 50px -20px rgba(0,0,0,0.6); background: #1d2026; }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
 .status {
   display: inline-flex; align-items: center; gap: 8px;
@@ -81,8 +74,13 @@ h1, h2, h3 { line-height: 1.2; margin: 0; letter-spacing: -0.02em; }
 }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 3px rgba(21,128,61,0.15); }
 .hero h1 { font-size: clamp(40px, 6vw, 64px); font-weight: 700; }
-.hero-title { font-size: clamp(18px, 2.2vw, 22px); color: var(--ink-2); margin: 12px 0 0; font-weight: 500; }
-.hero-pitch { max-width: 620px; color: var(--muted); margin: 20px 0 0; }
+.hero-title { font-size: clamp(18px, 2.2vw, 22px); color: rgba(255,255,255,0.85); margin: 12px 0 0; font-weight: 500; }
+.hero-pitch { max-width: 640px; color: rgba(255,255,255,0.68); margin: 20px 0 0; }
+.hero .status { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.18); color: rgba(255,255,255,0.85); }
+.hero .btn { background: transparent; color: #fff; border-color: rgba(255,255,255,0.3); }
+.hero .btn:hover { border-color: #fff; }
+.hero .btn-primary { background: #fff; color: var(--ink); border-color: #fff; }
+.hero .btn-primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
 
 .btn {
