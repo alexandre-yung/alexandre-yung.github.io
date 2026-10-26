@@ -17,8 +17,10 @@
       <a class="brand" href="index.html" data-bind="profile.name"></a>
       <nav class="nav">
         <a href="#projets" data-i18n="nav.projects"></a>
+        <a href="#parcours" data-i18n="nav.experience"></a>
         <a href="#apropos" data-i18n="nav.about"></a>
         <a href="#competences" data-i18n="nav.skills"></a>
+        <a href="#engagement" data-i18n="nav.beyond"></a>
         <a href="#contact" data-i18n="nav.contact"></a>
         <button class="lang-toggle" type="button" aria-label="Langue / Language"></button>
       </nav>
@@ -28,6 +30,7 @@
   <main>
     <section class="hero">
       <div class="wrap hero-inner">
+        <div class="hero-text">
         <p class="status" data-show="profile.lookingFor"><span class="dot"></span><span data-bind="profile.lookingFor"></span></p>
         <h1 data-bind="profile.name"></h1>
         <p class="hero-title" data-bind="profile.title"></p>
@@ -37,6 +40,10 @@
           <a class="btn" data-href="profile.cv" target="_blank" rel="noopener" data-i18n="hero.cv"></a>
           <a class="btn" data-href="profile.linkedin" target="_blank" rel="noopener">LinkedIn</a>
         </div>
+        </div>
+        <figure class="hero-photo" data-show="profile.photo">
+          <img data-src="profile.photo" alt="" width="600" height="600">
+        </figure>
       </div>
     </section>
 
@@ -51,10 +58,22 @@
       </div>
     </section>
 
-    <section id="apropos" class="section section-alt">
-      <div class="wrap about">
+    <section id="parcours" class="section section-alt">
+      <div class="wrap">
         <div class="section-head">
           <span class="section-num">02</span>
+          <h2 data-i18n="nav.experience"></h2>
+        </div>
+        <div class="timeline" id="experience"></div>
+        <h3 class="sub-head mono" data-i18n="experience.education"></h3>
+        <div class="education" id="education"></div>
+      </div>
+    </section>
+
+    <section id="apropos" class="section">
+      <div class="wrap about">
+        <div class="section-head">
+          <span class="section-num">03</span>
           <h2 data-i18n="nav.about"></h2>
         </div>
         <div class="about-body">
@@ -64,20 +83,32 @@
       </div>
     </section>
 
-    <section id="competences" class="section">
+    <section id="competences" class="section section-alt">
       <div class="wrap">
         <div class="section-head">
-          <span class="section-num">03</span>
+          <span class="section-num">04</span>
           <h2 data-i18n="nav.skills"></h2>
         </div>
         <div class="skills" id="skills"></div>
       </div>
     </section>
 
+    <section id="engagement" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-num">05</span>
+          <h2 data-i18n="beyond.title"></h2>
+        </div>
+        <p class="section-lead" data-i18n="beyond.lead"></p>
+        <div class="beyond" id="beyond"></div>
+        <p class="beyond-note mono" data-bind="beyondNote"></p>
+      </div>
+    </section>
+
     <section id="contact" class="section section-alt">
       <div class="wrap">
         <div class="section-head">
-          <span class="section-num">04</span>
+          <span class="section-num">06</span>
           <h2 data-i18n="nav.contact"></h2>
         </div>
         <p class="contact-lead" data-i18n="contact.lead"></p>

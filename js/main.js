@@ -10,6 +10,11 @@
       "nav.about": "À propos",
       "nav.skills": "Compétences",
       "nav.contact": "Contact",
+      "nav.experience": "Parcours",
+      "nav.beyond": "Engagement",
+      "experience.education": "Formation",
+      "beyond.title": "Au-delà de l'ingénierie",
+      "beyond.lead": "Ce qui m'anime en dehors du bureau d'études : l'engagement associatif, l'endurance et la musique.",
       "hero.seeProjects": "Voir les projets",
       "hero.cv": "Télécharger le CV",
       "filters.all": "Tous",
@@ -41,6 +46,11 @@
       "nav.about": "About",
       "nav.skills": "Skills",
       "nav.contact": "Contact",
+      "nav.experience": "Experience",
+      "nav.beyond": "Beyond work",
+      "experience.education": "Education",
+      "beyond.title": "Beyond engineering",
+      "beyond.lead": "What drives me outside the design office: volunteering, endurance sport and music.",
       "hero.seeProjects": "View projects",
       "hero.cv": "Download resume",
       "filters.all": "All",
@@ -153,6 +163,7 @@
       if (href) { el.href = href; el.hidden = false; } else { el.hidden = true; }
     });
     document.querySelectorAll("[data-show]").forEach(el => { el.hidden = !tr(get(el.dataset.show)); });
+    document.querySelectorAll("[data-src]").forEach(el => { const v = tr(get(el.dataset.src)); if (v) { el.src = v; el.alt = tr(p.name); } });
     document.querySelectorAll(".lang-toggle").forEach(btn => { btn.textContent = lang === "fr" ? "EN" : "FR"; });
     const year = document.getElementById("year");
     if (year) year.textContent = new Date().getFullYear();
@@ -196,6 +207,8 @@
       if (media && !media.querySelector(".badge3d")) media.insertAdjacentHTML("beforeend", `<span class="badge3d">${ui("card.model")}</span>`);
     }));
 
+    renderExperience();
+
     document.getElementById("about-text").innerHTML = richText(DATA.about.text);
     document.getElementById("facts").innerHTML = (DATA.about.facts || [])
       .map(f => `<div><dt>${esc(tr(f.label))}</dt><dd>${esc(tr(f.value))}</dd></div>`).join("");
@@ -207,6 +220,52 @@
           <li><span>${esc(tr(s.name))}</span>${s.level ? `<span class="skill-level" title="${s.level}/5">${[1, 2, 3, 4, 5].map(i => `<i class="${i <= s.level ? "on" : ""}"></i>`).join("")}</span>` : ""}</li>`).join("")}
         </ul>
       </div>`).join("");
+  }
+
+  const ICONS = {
+    heart: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+    bike: '<circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l4-7h5l3 7M10 9l2 7h-6M14 6h2.5"/>',
+    ball: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5l3.8 2.8-1.5 4.5H9.7l-1.5-4.5zM12 3.5v4M20.2 9.6l-4.4.7M16.9 19.2l-2.6-4.4M7.1 19.2l2.6-4.4M3.8 9.6l4.4.7"/>',
+    music: '<path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/>'
+  };
+
+  function tagList(tags) {
+    return (tags || []).length ? `<div class="tags">${tags.map(t => `<span class="tag">${esc(tr(t))}</span>`).join("")}</div>` : "";
+  }
+
+  function renderExperience() {
+    const exp = document.getElementById("experience");
+    if (exp) exp.innerHTML = (DATA.experience || []).map(e => `
+      <article class="exp">
+        <div class="exp-meta mono"><span>${esc(tr(e.period))}</span><span>${esc(tr(e.place))}</span></div>
+        <div class="exp-body">
+          <h3>${esc(tr(e.org))}</h3>
+          <p class="exp-role">${esc(tr(e.role))}</p>
+          ${e.intro ? `<p class="exp-intro">${esc(tr(e.intro))}</p>` : ""}
+          ${e.steps ? `<ol class="steps">${e.steps.map(st => `
+            <li><span class="step-when mono">${esc(tr(st.when))}</span><strong>${esc(tr(st.title))}</strong><p>${esc(tr(st.text))}</p></li>`).join("")}
+          </ol>` : ""}
+          ${tagList(e.tags)}
+        </div>
+      </article>`).join("");
+
+    const edu = document.getElementById("education");
+    if (edu) edu.innerHTML = (DATA.education || []).map(ed => `
+      <div class="edu">
+        <span class="edu-period mono">${esc(tr(ed.period))}</span>
+        <strong>${esc(tr(ed.degree))}</strong>
+        <span class="edu-school">${esc(tr(ed.school))}</span>
+        ${ed.detail ? `<p>${esc(tr(ed.detail))}</p>` : ""}
+      </div>`).join("");
+
+    const bey = document.getElementById("beyond");
+    if (bey) bey.innerHTML = (DATA.beyond || []).map(b => `
+      <article class="beyond-card">
+        <span class="beyond-icon"><svg viewBox="0 0 24 24">${ICONS[b.icon] || ""}</svg></span>
+        <h3>${esc(tr(b.title))}</h3>
+        <p class="beyond-sub mono">${esc(tr(b.sub))}</p>
+        <p>${esc(tr(b.text))}</p>
+      </article>`).join("");
   }
 
   function render() {

@@ -5,6 +5,8 @@
    - Dans les "body" : une ligne vide = nouveau paragraphe ; des lignes commençant par "- " = liste à puces.
    - Ajouter un modèle 3D : déposer le fichier dans le dossier models/ puis renseigner
        model: "models/mon-fichier.step"   (formats acceptés : .step .stp .glb .gltf .stl)
+   - Bannière en haut de la page projet : banner: "images/..." (photo réelle de préférence).
+     Pour un rendu CAO sur fond clair, ajouter  bannerStyle: "light"  (image entière à droite, texte sombre).
    - Modèle mal orienté ? Ajouter au projet  modelUp: "z"  (couché/debout, Z vers le haut) ou  modelUp: "-y"  (à l'envers).
    - Ajouter des images : les déposer dans images/<id-du-projet>/ puis renseigner cover et gallery.
    ========================================================================== */
@@ -26,7 +28,8 @@ window.PORTFOLIO = {
     },
     email: "alexandre.yung@edu.devinci.fr",
     linkedin: "https://www.linkedin.com/in/alexandre-yung",
-    cv: "cv/CV_Alexandre_YUNG.pdf"
+    cv: "cv/CV_Alexandre_YUNG.pdf",
+    photo: "images/profile.jpg"
   },
 
   about: {
@@ -55,6 +58,102 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
       { label: { fr: "Basé à", en: "Based in" }, value: "Paris – La Défense" }
     ]
   },
+
+  // Parcours professionnel, du plus récent au plus ancien.
+  // "steps" : étapes affichées sous forme de frise (évolution dans un même poste).
+  experience: [
+    {
+      org: "South Racing",
+      role: { fr: "Stagiaire ingénieur mécanique, bureau d'études", en: "Mechanical engineering intern, design office" },
+      period: { fr: "Avr. – août 2026 · 5 mois", en: "Apr – Aug 2026 · 5 months" },
+      place: { fr: "Lisbonne, Portugal", en: "Lisbon, Portugal" },
+      intro: {
+        fr: "Écurie de rallye-raid engagée au Dakar et au championnat du monde FIA W2RC, sur le programme Can-Am T3/T4. Plus de 45 pièces conçues et produites, en anglais au quotidien.",
+        en: "Rally-raid team racing the Dakar and the FIA W2RC world championship, on the Can-Am T3/T4 programme. 45+ parts designed and produced, working in English every day."
+      },
+      steps: [
+        { when: { fr: "Avril", en: "April" }, title: { fr: "Intégration et premiers outillages", en: "Onboarding and first tooling" }, text: {
+          fr: "Prise en main de la CAO des véhicules et du règlement FIA. Premier projet livré de bout en bout : l'outil de contrôle des jantes, imprimé en 3D et validé en atelier.",
+          en: "Getting to grips with the vehicle CAD and the FIA regulations. First project delivered end to end: the rim check tool, 3D printed and validated in the workshop." } },
+        { when: { fr: "Mai – juin", en: "May – June" }, title: { fr: "Pièces de sécurité et retour de course", en: "Safety parts and race feedback" }, text: {
+          fr: "Refonte de la crash box par calcul analytique et éléments finis (−38 % de masse), lancée en production. Après le Morocco Desert Challenge, synthèse de 69 problèmes techniques (Python, Excel) pour fixer les priorités de l'équipe.",
+          en: "Crash box redesign through analytical sizing and FEA (−38% mass), released to production. After the Morocco Desert Challenge, analysis of 69 technical issues (Python, Excel) to set the team's priorities." } },
+        { when: { fr: "Juillet – août", en: "July – August" }, title: { fr: "Autonomie et projets en parallèle", en: "Autonomy and parallel projects" }, text: {
+          fr: "2 à 4 projets menés en parallèle : rétro-ingénierie des lignes d'échappement et du carter de pompe à eau, rim scrapers, étude CFD d'admission, spoilers et entrées d'air. Des pièces aujourd'hui en service en W2RC.",
+          en: "2 to 4 projects run in parallel: reverse engineering of exhaust lines and the water pump housing, rim scrapers, intake CFD study, spoilers and air intakes. Parts now in service in the W2RC." } }
+      ],
+      tags: ["SolidWorks", "FEA", "CFD", { fr: "Rétro-ingénierie", en: "Reverse engineering" }, { fr: "Règlement FIA", en: "FIA regulations" }]
+    },
+    {
+      org: "Vinci Eco Drive · Formula Student",
+      role: { fr: "De membre à Directeur Technique", en: "From team member to Technical Director" },
+      period: { fr: "Sept. 2024 – aujourd'hui", en: "Sep 2024 – present" },
+      place: { fr: "ESILV, Paris – La Défense", en: "ESILV, Paris – La Défense" },
+      intro: {
+        fr: "Équipe étudiante qui conçoit, fabrique et fait rouler une monoplace électrique à monocoque carbone pour la compétition internationale Formula Student.",
+        en: "Student team designing, building and racing an electric single-seater with a carbon monocoque for the international Formula Student competition."
+      },
+      steps: [
+        { when: { fr: "Sept. – déc. 2024", en: "Sep – Dec 2024" }, title: { fr: "Membre de l'équipe Liaison au sol", en: "Suspension team member" }, text: {
+          fr: "Conception et fabrication de la suspension, de la transmission et de la direction : modélisation CAO, mises en plan, FAO et usinage.",
+          en: "Design and manufacturing of the suspension, drivetrain and steering: CAD modelling, drawings, CAM and machining." } },
+        { when: { fr: "Déc. 2024 – mars 2025", en: "Dec 2024 – Mar 2025" }, title: { fr: "Chef d'équipe Liaison au sol", en: "Suspension team lead" }, text: {
+          fr: "Encadrement de 11 membres : supervision technique, planification, choix stratégiques sur l'évolution de la monoplace, scan 3D de la monocoque carbone.",
+          en: "Leading 11 members: technical supervision, planning, strategic choices on the car's development, 3D scan of the carbon monocoque." } },
+        { when: { fr: "Mars 2025 – aujourd'hui", en: "Mar 2025 – present" }, title: { fr: "Directeur Technique", en: "Technical Director" }, text: {
+          fr: "Management de 30 membres en liaison au sol et aérodynamique : décisions d'architecture, recrutement, répartition des tâches, planning Gantt, budget et coordination avec la fabrication et les systèmes embarqués.",
+          en: "Managing 30 members across suspension and aerodynamics: architecture decisions, recruitment, task allocation, Gantt planning, budget and coordination with manufacturing and embedded systems." } }
+      ],
+      tags: [{ fr: "Management", en: "Management" }, { fr: "Liaison au sol", en: "Vehicle dynamics" }, "CATIA", { fr: "Gestion de projet", en: "Project management" }]
+    },
+    {
+      org: "Mercedes · de Willermin VI",
+      role: { fr: "Stagiaire technicien mécanicien poids lourds", en: "Heavy truck mechanic intern" },
+      period: { fr: "Juin – juil. 2025 · 2 mois", en: "Jun – Jul 2025 · 2 months" },
+      place: { fr: "Vitrolles, France", en: "Vitrolles, France" },
+      intro: {
+        fr: "Diagnostic, maintenance et réparation de poids lourds en atelier : vidanges, embrayages, freins, boîtes de vitesses et systèmes électroniques. Une expérience concrète du terrain, au contact des pièces que l'on conçoit ensuite en bureau d'études.",
+        en: "Diagnosis, maintenance and repair of heavy trucks in the workshop: oil changes, clutches, brakes, gearboxes and electronic systems. Hands-on experience with the kind of parts later designed in a design office."
+      },
+      tags: [{ fr: "Diagnostic", en: "Diagnostics" }, { fr: "Maintenance", en: "Maintenance" }]
+    },
+    {
+      org: "SYT Technologies",
+      role: { fr: "Stage technique en optronique", en: "Optronics technical internship" },
+      period: { fr: "Juin – juil. 2018 · 2 mois", en: "Jun – Jul 2018 · 2 months" },
+      place: { fr: "Avignon, France", en: "Avignon, France" },
+      intro: {
+        fr: "Découverte de l'industrie optronique et participation à la conception d'une caméra longue portée, notamment sur les opérations de soudure.",
+        en: "Introduction to the optronics industry and contribution to the design of a long-range camera, notably on soldering work."
+      },
+      tags: [{ fr: "Optronique", en: "Optronics" }]
+    }
+  ],
+
+  education: [
+    { school: "ESILV · École Supérieure d'Ingénieurs Léonard de Vinci", degree: { fr: "Cycle ingénieur · Master Modélisation & Mécanique Numérique", en: "Engineering degree · MSc Modelling & Computational Mechanics" }, period: "2024 – 2027", detail: {
+      fr: "Structures numériques, composites et endommagement, rupture, aéroélasticité, dynamique des véhicules.",
+      en: "Computational structures, composites and damage, fracture, aeroelasticity, vehicle dynamics." } },
+    { school: { fr: "Lycée Thiers, Marseille", en: "Lycée Thiers, Marseille" }, degree: { fr: "Classe préparatoire MPI (maths, physique, informatique)", en: "Preparatory classes, MPI track (maths, physics, computer science)" }, period: "2021 – 2024" },
+    { school: { fr: "Lycée de Provence, Marseille", en: "Lycée de Provence, Marseille" }, degree: { fr: "Baccalauréat maths-physique, option maths expertes · mention Bien", en: "French Baccalauréat, maths & physics, advanced maths · with honours" }, period: "2021" }
+  ],
+
+  // Engagement et loisirs
+  beyond: [
+    { icon: "heart", title: { fr: "Dunes d'Espoir", en: "Dunes d'Espoir" }, sub: { fr: "Bénévole · 2016 – 2021", en: "Volunteer · 2016 – 2021" }, text: {
+      fr: "Participation à des courses en tirant des joëlettes, pour permettre à des enfants en situation de handicap de vivre pleinement l'émotion d'une course. Une expérience humaine intense, faite de partage et de dépassement de soi.",
+      en: "Running races while pulling joëlettes (all-terrain wheelchairs) so that children with disabilities can fully live the thrill of a race. An intense human experience built on sharing and pushing beyond one's limits." } },
+    { icon: "bike", title: { fr: "Vélo de route", en: "Road cycling" }, sub: { fr: "Animateur de camp sportif d'été", en: "Summer sports camp leader" }, text: {
+      fr: "Encadrement d'un camp d'été de deux semaines, très exigeant physiquement : des sorties de 80 à 100 km par jour, deux jours sur trois, en gérant la sécurité et le rythme du groupe.",
+      en: "Leading a physically demanding two-week summer camp: 80 to 100 km rides a day, two days out of three, while managing the group's safety and pace." } },
+    { icon: "ball", title: { fr: "Football", en: "Football" }, sub: { fr: "Sport collectif", en: "Team sport" }, text: {
+      fr: "Le goût du collectif et de l'engagement pour l'équipe, que je retrouve aujourd'hui dans le travail d'ingénierie en groupe.",
+      en: "A taste for teamwork and commitment to the group, which I find again today in engineering team work." } },
+    { icon: "music", title: { fr: "Piano", en: "Piano" }, sub: { fr: "Depuis l'enfance · classique et jazz", en: "Since childhood · classical and jazz" }, text: {
+      fr: "Des années de pratique entre la rigueur du classique et la liberté du jazz : de la patience, de la régularité et de l'écoute.",
+      en: "Years of practice between the rigour of classical music and the freedom of jazz: patience, consistency and listening." } }
+  ],
+  beyondNote: { fr: "Aussi : surf et ski.", en: "Also: surfing and skiing." },
 
   skills: [
     { group: { fr: "CAO / DAO", en: "CAD" }, items: [
@@ -145,40 +244,46 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
       number: "02",
       year: "2026",
       context: "South Racing · Can-Am Maverick R T3",
-      title: { fr: "Carter de pompe à eau et raccord Dash 16", en: "Water pump housing & Dash 16 fitting" },
+      title: { fr: "Carter de pompe à eau : sortie latérale", en: "Water pump housing: side outlet redesign" },
       summary: {
-        fr: "Carter de pompe à eau du moteur Maverick R et raccord Dash 16 – M32×1,5 conçu en interne : coût divisé par deux face à l'adaptateur du commerce.",
-        en: "Water pump housing for the Maverick R engine, plus an in-house Dash 16 – M32×1.5 fitting that halves the cost of the off-the-shelf adapter."
+        fr: "Rétro-ingénierie du carter de pompe à eau du moteur Maverick R pour faire passer la sortie d'eau de verticale à latérale, puis du raccord Dash 16 associé, fabriqué par le partenaire d'usinage de l'équipe pour deux fois moins cher.",
+        en: "Reverse engineering of the Maverick R engine water pump housing to move the coolant outlet from vertical to side-exiting, then of the matching Dash 16 fitting, machined by the team's CNC partner for half the price."
       },
-      tags: ["SolidWorks", { fr: "Réduction de coût", en: "Cost reduction" }, "DFM"],
-      banner: "images/water-pump-housing/dash16.jpg",
+      tags: ["SolidWorks", { fr: "Rétro-ingénierie", en: "Reverse engineering" }, { fr: "Réduction de coût", en: "Cost reduction" }],
+      banner: "images/water-pump-housing/cover.jpg",
+      bannerStyle: "light",
       cover: "images/water-pump-housing/cover.jpg",
       model: "",
       specs: [
-        { label: { fr: "Rôle", en: "Role" }, value: { fr: "Benchmark, CAO, mise en plan", en: "Benchmark, CAD, drawings" } },
+        { label: { fr: "Rôle", en: "Role" }, value: { fr: "Rétro-ingénierie, CAO, mise en plan", en: "Reverse engineering, CAD, drawings" } },
         { label: { fr: "Outils", en: "Tools" }, value: "SolidWorks" },
+        { label: { fr: "Sortie d'eau", en: "Coolant outlet" }, value: { fr: "Verticale → latérale, coude intégré", en: "Vertical → side, integrated bend" } },
         { label: { fr: "Interface", en: "Interface" }, value: { fr: "AN16 (Dash 16) · taraudage M32×1,5", en: "AN16 (Dash 16) · M32×1.5 thread" } },
-        { label: { fr: "Coût du raccord", en: "Fitting cost" }, value: { fr: "60 € → 30 € (−50 %)", en: "€60 → €30 (−50%)" } },
-        { label: { fr: "Série", en: "Batch" }, value: { fr: "8 pièces, fabrication sous-traitée", en: "8 parts, outsourced manufacturing" } }
+        { label: { fr: "Raccord", en: "Fitting" }, value: { fr: "60 € → 30 € (−50 %), série de 8", en: "€60 → €30 (−50%), batch of 8" } },
+        { label: { fr: "Fabrication", en: "Manufacturing" }, value: { fr: "Usinage CNC, partenaire de l'équipe", en: "CNC machining, team partner" } }
       ],
       sections: [
-        { title: { fr: "Le besoin", en: "The need" }, body: {
-          fr: "Le moteur du Can-Am Maverick R utilisé en T3 avait besoin d'un nouveau carter de pompe à eau, avec une sortie AN16 sur un taraudage M32×1,5 pour se raccorder au circuit de refroidissement de course.",
-          en: "The Can-Am Maverick R engine used in T3 needed a new water pump housing with an AN16 outlet on an M32×1.5 thread, to connect to the race cooling circuit."
+        { title: { fr: "L'objectif", en: "The goal" }, body: {
+          fr: "Sur le moteur du Can-Am Maverick R engagé en T3, le carter de pompe à eau d'origine fait sortir le liquide de refroidissement à la verticale. Pour l'adapter au circuit de refroidissement de la voiture de course, il fallait que la sortie fasse un virage et sorte sur le côté, sans rien changer au reste de la pompe.",
+          en: "On the Can-Am Maverick R engine racing in T3, the stock water pump housing sends coolant out vertically. To suit the race car's cooling circuit, the outlet had to turn and exit sideways, without changing anything else on the pump."
         }},
-        { title: { fr: "Benchmark", en: "Benchmark" }, body: {
-          fr: "- Étude d'un couvercle de pompe du commerce pour Maverick R\n- Recherche d'un adaptateur Dash 16 – M32×1,5 dans les catalogues : référence trouvée à 60 €, en inox, matériau peu adapté à l'usage\n- Décision : concevoir notre propre raccord et le faire fabriquer",
-          en: "- Review of an aftermarket Maverick R pump cover\n- Search for a Dash 16 – M32×1.5 adapter in supplier catalogues: one found at €60, in stainless steel, a poor material choice for this use\n- Decision: design our own fitting and have it manufactured"
+        { title: { fr: "Rétro-ingénierie du carter", en: "Reverse engineering the housing" }, body: {
+          fr: "Le carter est la pièce maîtresse du projet : il ferme la pompe et le liquide circule à l'intérieur avec des écoulements complexes. Il demande donc une grande précision.\n\n- Relevé et reproduction de toutes les interfaces de la pièce d'origine : points de fixation, plan de joint et logement de la turbine, pour un montage direct sur le moteur\n- Reconception du canal de sortie : la sortie verticale devient un coude intégré qui débouche sur le côté, avec une section continue pour ne pas perturber l'écoulement\n- Sortie taraudée M32×1,5 pour recevoir un raccord AN16 (Dash 16)\n- Logo de l'équipe intégré au carter",
+          en: "The housing is the core of the project: it closes the pump and coolant flows through it with complex hydraulic paths, so it demands high precision.\n\n- Survey and reproduction of every interface of the original part: mounting points, sealing face and impeller cavity, so it bolts straight onto the engine\n- Redesign of the outlet channel: the vertical outlet becomes an integrated bend exiting sideways, with a continuous cross-section so the flow is not disturbed\n- M32×1.5 threaded outlet to take an AN16 (Dash 16) fitting\n- Team logo built into the housing"
         }},
-        { title: { fr: "Conception et résultat", en: "Design & outcome" }, body: {
-          fr: "Modélisation du carter de pompe et du raccord Dash 16 – M32×1,5, mise en plan pour la fabrication, logo de l'équipe gravé, puis consultation de plusieurs fournisseurs. Le raccord est produit à 30 € pièce sur une série de 8, soit deux fois moins cher que l'adaptateur du commerce.",
-          en: "Modelled the pump housing and the Dash 16 – M32×1.5 fitting, produced the manufacturing drawings, added the team logo and requested quotes from several suppliers. The fitting is made for €30 each in a batch of 8, half the price of the off-the-shelf adapter."
+        { title: { fr: "Le raccord Dash 16 – M32×1,5", en: "The Dash 16 – M32×1.5 fitting" }, body: {
+          fr: "Pour raccorder la nouvelle sortie, l'adaptateur du commerce coûtait 60 € pièce, en inox. J'ai fait la rétro-ingénierie de ce raccord et l'ai mis en plan pour le faire usiner par le partenaire CNC de South Racing : 30 € pièce sur une série de 8, soit deux fois moins cher.",
+          en: "To connect the new outlet, the off-the-shelf adapter cost €60 each, in stainless steel. I reverse engineered the fitting and drew it up so South Racing's CNC partner could machine it: €30 each in a batch of 8, half the price."
+        }},
+        { title: { fr: "Résultat", en: "Outcome" }, body: {
+          fr: "Un carter à sortie latérale qui se monte directement à la place de la pièce d'origine, avec ses plans de fabrication, et un raccord produit en interne pour deux fois moins cher que l'équivalent du commerce.",
+          en: "A side-outlet housing that fits directly in place of the original part, with its manufacturing drawings, and a fitting made in-house for half the price of the off-the-shelf equivalent."
         }}
       ],
       gallery: [
-        { src: "images/water-pump-housing/cover.jpg", caption: { fr: "Carter de pompe à eau, modèle CAO", en: "Water pump housing, CAD model" } },
-        { src: "images/water-pump-housing/section.jpg", caption: { fr: "Coupe : sortie taraudée M32×1,5", en: "Section view: M32×1.5 threaded outlet" } },
-        { src: "images/water-pump-housing/dash16.jpg", caption: { fr: "Raccord Dash 16 – M32×1,5 produit", en: "Manufactured Dash 16 – M32×1.5 fitting" } }
+        { src: "images/water-pump-housing/cover.jpg", caption: { fr: "Carter à sortie latérale, modèle CAO", en: "Side-outlet housing, CAD model" } },
+        { src: "images/water-pump-housing/section.jpg", caption: { fr: "Coupe du canal de sortie : coude et taraudage M32×1,5", en: "Outlet channel section: bend and M32×1.5 thread" } },
+        { src: "images/water-pump-housing/dash16.jpg", caption: { fr: "Raccord Dash 16 – M32×1,5 usiné", en: "Machined Dash 16 – M32×1.5 fitting" } }
       ]
     },
     {
@@ -327,7 +432,8 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
         en: "Scraper that clears rocks trapped inside the rim before they damage the upright and caliper. Designed from a blank page: benchmark, two versions, a 7-part assembly adapted to three rim types."
       },
       tags: ["SolidWorks", "Benchmark"],
-      banner: "images/rim-scraper/cover.jpg",
+      banner: "images/rim-scraper/cad-wheel.jpg",
+      bannerStyle: "light",
       cover: "images/rim-scraper/cad-wheel.jpg",
       model: "",
       specs: [

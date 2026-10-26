@@ -20,7 +20,11 @@ function render() {
   document.title = tr(project.title) + " — " + tr(DATA.profile.name);
 
   const banner = project.banner || project.cover;
-  document.getElementById("p-banner").style.backgroundImage = banner ? `url("${banner}")` : "";
+  const bannerEl = document.getElementById("p-banner");
+  // URL absolue : dans une variable CSS, un chemin relatif serait résolu depuis css/
+  bannerEl.style.setProperty("--banner", banner ? `url("${new URL(banner, location.href).href}")` : "none");
+  bannerEl.style.backgroundPosition = project.bannerPosition || "";
+  bannerEl.classList.toggle("banner-light", project.bannerStyle === "light");
   document.getElementById("p-num").textContent = `P-${project.number || ""} · ${project.year || ""}${project.context ? " · " + tr(project.context) : ""}`;
   document.getElementById("p-title").textContent = tr(project.title);
   document.getElementById("p-summary").textContent = tr(project.summary);
