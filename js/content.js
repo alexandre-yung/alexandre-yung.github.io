@@ -23,8 +23,8 @@ window.PORTFOLIO = {
       en: "Seeking a 6-month final-year internship · from February 2027"
     },
     pitch: {
-      fr: "Cinq mois en bureau d'études chez South Racing (Dakar, W2RC) à concevoir, dimensionner et produire plus de 45 pièces de rallye-raid selon la réglementation FIA. Je veux maintenant mettre cette rigueur au service de la défense et de l'aéronautique.",
-      en: "Five months in the design office at South Racing (Dakar, W2RC), designing, sizing and releasing 45+ rally-raid parts to FIA regulations. I now want to bring that rigour to the defence and aerospace industries."
+      fr: "Directeur Technique de l'équipe Formula Student de l'ESILV, où je pilote 30 étudiants, et cinq mois en bureau d'études chez South Racing (Dakar, W2RC), avec plus de 45 pièces de rallye-raid conçues et produites selon la réglementation FIA. J'y ai construit un socle complet : conception sous SolidWorks, calcul de structures par éléments finis, simulation CFD, rétro-ingénierie et management d'équipe. Je veux maintenant mettre ces compétences au service de la défense et de l'aéronautique.",
+      en: "Technical Director of ESILV's Formula Student team, leading 30 students, and five months in the design office at South Racing (Dakar, W2RC), where I designed and released 45+ rally-raid parts to FIA regulations. Along the way I built a well-rounded skill set: SolidWorks design, finite element structural analysis, CFD, reverse engineering and team management. I now want to put these skills to work in the defence and aerospace industries."
     },
     email: "alexandre.yung@edu.devinci.fr",
     linkedin: "https://www.linkedin.com/in/alexandre-yung",
