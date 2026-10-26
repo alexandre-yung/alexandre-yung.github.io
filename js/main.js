@@ -239,8 +239,13 @@
       <article class="exp">
         <div class="exp-meta mono"><span>${esc(tr(e.period))}</span><span>${esc(tr(e.place))}</span></div>
         <div class="exp-body">
-          <h3>${esc(tr(e.org))}</h3>
-          <p class="exp-role">${esc(tr(e.role))}</p>
+          <div class="exp-head">
+            ${e.logo ? `<img class="org-logo" src="${esc(e.logo)}" alt="${esc(tr(e.org))}" loading="lazy">` : ""}
+            <div>
+              <h3>${esc(tr(e.org))}</h3>
+              <p class="exp-role">${esc(tr(e.role))}</p>
+            </div>
+          </div>
           ${e.intro ? `<p class="exp-intro">${esc(tr(e.intro))}</p>` : ""}
           ${e.bullets ? `<ul class="exp-bullets">${e.bullets.map(bl => `<li>${esc(tr(bl))}</li>`).join("")}</ul>` : ""}
           ${e.steps ? `<ol class="steps">${e.steps.map(st => `
@@ -253,6 +258,7 @@
     const edu = document.getElementById("education");
     if (edu) edu.innerHTML = (DATA.education || []).map(ed => `
       <div class="edu">
+        ${ed.logo ? `<img class="org-logo org-logo-sm" src="${esc(ed.logo)}" alt="${esc(tr(ed.school))}" loading="lazy">` : ""}
         <span class="edu-period mono">${esc(tr(ed.period))}</span>
         <strong>${esc(tr(ed.degree))}</strong>
         <span class="edu-school">${esc(tr(ed.school))}</span>
@@ -262,7 +268,8 @@
     const bey = document.getElementById("beyond");
     if (bey) bey.innerHTML = (DATA.beyond || []).map(b => `
       <article class="beyond-card">
-        <span class="beyond-icon"><svg viewBox="0 0 24 24">${ICONS[b.icon] || ""}</svg></span>
+        ${b.logo ? `<img class="org-logo beyond-logo" src="${esc(b.logo)}" alt="${esc(tr(b.title))}" loading="lazy">`
+                 : `<span class="beyond-icon"><svg viewBox="0 0 24 24">${ICONS[b.icon] || ""}</svg></span>`}
         <h3>${esc(tr(b.title))}</h3>
         <p class="beyond-sub mono">${esc(tr(b.sub))}</p>
         <p>${esc(tr(b.text))}</p>

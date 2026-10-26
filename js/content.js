@@ -23,8 +23,8 @@ window.PORTFOLIO = {
       en: "Seeking a 6-month final-year internship · from February 2027"
     },
     pitch: {
-      fr: "Directeur Technique de l'équipe Formula Student de l'ESILV, où je pilote 30 étudiants, et cinq mois en bureau d'études chez South Racing (Dakar, W2RC), avec plus de 45 pièces de rallye-raid conçues et produites selon la réglementation FIA. J'y ai construit un socle complet : conception sous SolidWorks, calcul de structures par éléments finis, simulation CFD, rétro-ingénierie et management d'équipe. Je veux maintenant mettre ces compétences au service de la défense et de l'aéronautique.",
-      en: "Technical Director of ESILV's Formula Student team, leading 30 students, and five months in the design office at South Racing (Dakar, W2RC), where I designed and released 45+ rally-raid parts to FIA regulations. Along the way I built a well-rounded skill set: SolidWorks design, finite element structural analysis, CFD, reverse engineering and team management. I now want to put these skills to work in the defence and aerospace industries."
+      fr: "Élève-ingénieur en mécanique numérique (ESILV), Directeur Technique Formula Student (30 étudiants). Stage de 5 mois en bureau d'études chez South Racing (Dakar, W2RC) : conception, simulation et production de plus de 45 pièces selon la réglementation FIA. J'y ai construit un socle complet : conception sous SolidWorks, calcul de structures par éléments finis, simulation CFD, rétro-ingénierie et management d'équipe. Je veux maintenant mettre ces compétences au service de la défense et de l'aéronautique.",
+      en: "Computational mechanics engineering student (ESILV) and Formula Student Technical Director (30 students). 5-month design office internship at South Racing (Dakar, W2RC): design, simulation and production of 45+ parts to FIA regulations. There I built a well-rounded skill set: SolidWorks design, finite element structural analysis, CFD simulation, reverse engineering and team management. I now want to put these skills to work in the defence and aerospace industries."
     },
     email: "alexandre.yung@edu.devinci.fr",
     linkedin: "https://www.linkedin.com/in/alexandre-yung",
@@ -64,6 +64,7 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
   experience: [
     {
       org: "Vinci Eco Drive · Formula Student",
+      logo: "images/logos/vinci-eco-drive.jpg",
       role: { fr: "Membre liaison au sol → chef d'équipe → Directeur Technique", en: "Suspension member → team lead → Technical Director" },
       period: { fr: "Sept. 2024 – aujourd'hui", en: "Sep 2024 – present" },
       place: { fr: "ESILV, Paris – La Défense", en: "ESILV, Paris – La Défense" },
@@ -86,6 +87,7 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
     },
     {
       org: "South Racing",
+      logo: "images/logos/south-racing.jpg",
       role: { fr: "Stagiaire ingénieur mécanique, bureau d'études", en: "Mechanical engineering intern, design office" },
       period: { fr: "Avr. – août 2026 · 5 mois", en: "Apr – Aug 2026 · 5 months" },
       place: { fr: "Lisbonne, Portugal", en: "Lisbon, Portugal" },
@@ -107,6 +109,7 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
     },
     {
       org: "Mercedes · de Willermin VI",
+      logo: "images/logos/mercedes.jpg",
       role: { fr: "Stagiaire technicien mécanicien poids lourds", en: "Heavy truck mechanic intern" },
       period: { fr: "Juin – juil. 2025 · 2 mois", en: "Jun – Jul 2025 · 2 months" },
       place: { fr: "Vitrolles, France", en: "Vitrolles, France" },
@@ -118,6 +121,7 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
     },
     {
       org: "SYT Technologies",
+      logo: "images/logos/syt.jpg",
       role: { fr: "Stage technique en optronique", en: "Optronics technical internship" },
       period: { fr: "Juin – juil. 2018 · 2 mois", en: "Jun – Jul 2018 · 2 months" },
       place: { fr: "Avignon, France", en: "Avignon, France" },
@@ -130,16 +134,16 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
   ],
 
   education: [
-    { school: "ESILV · École Supérieure d'Ingénieurs Léonard de Vinci", degree: { fr: "Cycle ingénieur · Master Modélisation & Mécanique Numérique", en: "Engineering degree · MSc Modelling & Computational Mechanics" }, period: "2024 – 2027", detail: {
+    { logo: "images/logos/esilv.jpg", school: "ESILV · École Supérieure d'Ingénieurs Léonard de Vinci", degree: { fr: "Cycle ingénieur · Master Modélisation & Mécanique Numérique", en: "Engineering degree · MSc Modelling & Computational Mechanics" }, period: "2024 – 2027", detail: {
       fr: "Structures numériques, composites et endommagement, rupture, aéroélasticité, dynamique des véhicules.",
       en: "Computational structures, composites and damage, fracture, aeroelasticity, vehicle dynamics." } },
-    { school: { fr: "Lycée Thiers, Marseille", en: "Lycée Thiers, Marseille" }, degree: { fr: "Classe préparatoire MPI (maths, physique, informatique)", en: "Preparatory classes, MPI track (maths, physics, computer science)" }, period: "2021 – 2024" },
-    { school: { fr: "Lycée de Provence, Marseille", en: "Lycée de Provence, Marseille" }, degree: { fr: "Baccalauréat maths-physique, option maths expertes · mention Bien", en: "French Baccalauréat, maths & physics, advanced maths · with honours" }, period: "2021" }
+    { logo: "images/logos/lycee-thiers.jpg", school: { fr: "Lycée Thiers, Marseille", en: "Lycée Thiers, Marseille" }, degree: { fr: "Classe préparatoire MPI (maths, physique, informatique)", en: "Preparatory classes, MPI track (maths, physics, computer science)" }, period: "2021 – 2024" },
+    { logo: "images/logos/lycee-provence.jpg", school: { fr: "Lycée de Provence, Marseille", en: "Lycée de Provence, Marseille" }, degree: { fr: "Baccalauréat maths-physique, option maths expertes · mention Bien", en: "French Baccalauréat, maths & physics, advanced maths · with honours" }, period: "2021" }
   ],
 
   // Engagement et loisirs
   beyond: [
-    { icon: "heart", title: { fr: "Dunes d'Espoir", en: "Dunes d'Espoir" }, sub: { fr: "Bénévole · 2016 – 2021", en: "Volunteer · 2016 – 2021" }, text: {
+    { icon: "heart", logo: "images/logos/dunes-espoir.jpg", title: { fr: "Dunes d'Espoir", en: "Dunes d'Espoir" }, sub: { fr: "Bénévole · 2016 – 2021", en: "Volunteer · 2016 – 2021" }, text: {
       fr: "Participation à des courses en tirant des joëlettes, pour permettre à des enfants en situation de handicap de vivre pleinement l'émotion d'une course. Une expérience humaine intense, faite de partage et de dépassement de soi.",
       en: "Running races while pulling joëlettes (all-terrain wheelchairs) so that children with disabilities can fully live the thrill of a race. An intense human experience built on sharing and pushing beyond one's limits." } },
     { icon: "bike", title: { fr: "Vélo de route", en: "Road cycling" }, sub: { fr: "Animateur de camp sportif d'été", en: "Summer sports camp leader" }, text: {
