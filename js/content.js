@@ -55,7 +55,7 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
       { label: "Formula Student", value: { fr: "Directeur Technique · Vinci Eco Drive (30 membres)", en: "Technical Director · Vinci Eco Drive (30 members)" } },
       { label: { fr: "Langues", en: "Languages" }, value: { fr: "Français · Anglais B2+ · Allemand B1", en: "French · English B2+ · German B1" } },
       { label: { fr: "Disponible", en: "Available" }, value: { fr: "Février 2027 · 6 mois", en: "February 2027 · 6 months" } },
-      { label: { fr: "Basé à", en: "Based in" }, value: "Paris – La Défense" }
+      { label: { fr: "Basé à", en: "Based in" }, value: "Paris" }
     ]
   },
 
