@@ -60,38 +60,16 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
   },
 
   // Parcours professionnel, du plus récent au plus ancien.
-  // "steps" : étapes affichées sous forme de frise (évolution dans un même poste).
+  // "bullets" : liste de missions ; "steps" : frise d'évolution au sein d'une même structure.
   experience: [
     {
-      org: "South Racing",
-      role: { fr: "Stagiaire ingénieur mécanique, bureau d'études", en: "Mechanical engineering intern, design office" },
-      period: { fr: "Avr. – août 2026 · 5 mois", en: "Apr – Aug 2026 · 5 months" },
-      place: { fr: "Lisbonne, Portugal", en: "Lisbon, Portugal" },
-      intro: {
-        fr: "Écurie de rallye-raid engagée au Dakar et au championnat du monde FIA W2RC, sur le programme Can-Am T3/T4. Plus de 45 pièces conçues et produites, en anglais au quotidien.",
-        en: "Rally-raid team racing the Dakar and the FIA W2RC world championship, on the Can-Am T3/T4 programme. 45+ parts designed and produced, working in English every day."
-      },
-      steps: [
-        { when: { fr: "Avril", en: "April" }, title: { fr: "Intégration et premiers outillages", en: "Onboarding and first tooling" }, text: {
-          fr: "Prise en main de la CAO des véhicules et du règlement FIA. Premier projet livré de bout en bout : l'outil de contrôle des jantes, imprimé en 3D et validé en atelier.",
-          en: "Getting to grips with the vehicle CAD and the FIA regulations. First project delivered end to end: the rim check tool, 3D printed and validated in the workshop." } },
-        { when: { fr: "Mai – juin", en: "May – June" }, title: { fr: "Pièces de sécurité et retour de course", en: "Safety parts and race feedback" }, text: {
-          fr: "Refonte de la crash box par calcul analytique et éléments finis (−38 % de masse), lancée en production. Après le Morocco Desert Challenge, synthèse de 69 problèmes techniques (Python, Excel) pour fixer les priorités de l'équipe.",
-          en: "Crash box redesign through analytical sizing and FEA (−38% mass), released to production. After the Morocco Desert Challenge, analysis of 69 technical issues (Python, Excel) to set the team's priorities." } },
-        { when: { fr: "Juillet – août", en: "July – August" }, title: { fr: "Autonomie et projets en parallèle", en: "Autonomy and parallel projects" }, text: {
-          fr: "2 à 4 projets menés en parallèle : rétro-ingénierie des lignes d'échappement et du carter de pompe à eau, rim scrapers, étude CFD d'admission, spoilers et entrées d'air. Des pièces aujourd'hui en service en W2RC.",
-          en: "2 to 4 projects run in parallel: reverse engineering of exhaust lines and the water pump housing, rim scrapers, intake CFD study, spoilers and air intakes. Parts now in service in the W2RC." } }
-      ],
-      tags: ["SolidWorks", "FEA", "CFD", { fr: "Rétro-ingénierie", en: "Reverse engineering" }, { fr: "Règlement FIA", en: "FIA regulations" }]
-    },
-    {
       org: "Vinci Eco Drive · Formula Student",
-      role: { fr: "De membre à Directeur Technique", en: "From team member to Technical Director" },
+      role: { fr: "Membre liaison au sol → chef d'équipe → Directeur Technique", en: "Suspension member → team lead → Technical Director" },
       period: { fr: "Sept. 2024 – aujourd'hui", en: "Sep 2024 – present" },
       place: { fr: "ESILV, Paris – La Défense", en: "ESILV, Paris – La Défense" },
       intro: {
-        fr: "Équipe étudiante qui conçoit, fabrique et fait rouler une monoplace électrique à monocoque carbone pour la compétition internationale Formula Student.",
-        en: "Student team designing, building and racing an electric single-seater with a carbon monocoque for the international Formula Student competition."
+        fr: "Association Formula Student de l'ESILV : une équipe d'étudiants qui conçoit, fabrique et fait rouler une monoplace électrique à monocoque carbone pour la compétition internationale. En un an et demi, je suis passé de membre de l'équipe Liaison au sol à Directeur Technique de toute la partie mécanique.",
+        en: "ESILV's Formula Student association: a student team designing, building and racing an electric single-seater with a carbon monocoque for the international competition. In a year and a half, I went from suspension team member to Technical Director of the whole mechanical side."
       },
       steps: [
         { when: { fr: "Sept. – déc. 2024", en: "Sep – Dec 2024" }, title: { fr: "Membre de l'équipe Liaison au sol", en: "Suspension team member" }, text: {
@@ -105,6 +83,27 @@ I'm looking for a 6-month final-year internship starting February 2027, in mecha
           en: "Managing 30 members across suspension and aerodynamics: architecture decisions, recruitment, task allocation, Gantt planning, budget and coordination with manufacturing and embedded systems." } }
       ],
       tags: [{ fr: "Management", en: "Management" }, { fr: "Liaison au sol", en: "Vehicle dynamics" }, "CATIA", { fr: "Gestion de projet", en: "Project management" }]
+    },
+    {
+      org: "South Racing",
+      role: { fr: "Stagiaire ingénieur mécanique, bureau d'études", en: "Mechanical engineering intern, design office" },
+      period: { fr: "Avr. – août 2026 · 5 mois", en: "Apr – Aug 2026 · 5 months" },
+      place: { fr: "Lisbonne, Portugal", en: "Lisbon, Portugal" },
+      intro: {
+        fr: "Écurie de rallye-raid engagée au Dakar et au championnat du monde FIA W2RC, sur le programme Can-Am T3/T4. Plus de 45 pièces conçues et produites, en anglais au quotidien.",
+        en: "Rally-raid team racing the Dakar and the FIA W2RC world championship, on the Can-Am T3/T4 programme. 45+ parts designed and produced, working in English every day."
+      },
+      bullets: [
+        { fr: "Conception sous SolidWorks et production de pièces structurelles, mécaniques et aérodynamiques, aujourd'hui en service sur le championnat du monde FIA W2RC.",
+          en: "SolidWorks design and production of structural, mechanical and aerodynamic parts, now in service in the FIA W2RC world championship." },
+        { fr: "Optimisation structurelle : masse de la crash box réduite de 38 % grâce au calcul analytique et à la simulation par éléments finis.",
+          en: "Structural optimisation: crash box mass cut by 38% through analytical sizing and finite element simulation." },
+        { fr: "Rétro-ingénierie et R&D : ligne d'échappement, carter de pompe à eau, protections de jantes, spoilers, entrées d'air, conduit d'admission et outillages d'atelier imprimés en 3D.",
+          en: "Reverse engineering and R&D: exhaust line, water pump housing, rim protection, spoilers, air intakes, intake duct and 3D-printed workshop tooling." },
+        { fr: "Données et gestion : traitement de 69 problèmes techniques (Python), analyse du règlement FIA, livrables tenus dans les délais du calendrier de course, 100 % en anglais.",
+          en: "Data and management: processing of 69 technical issues (Python), FIA regulation analysis, deliverables met under race-calendar deadlines, entirely in English." }
+      ],
+      tags: ["SolidWorks", "FEA", "CFD", { fr: "Rétro-ingénierie", en: "Reverse engineering" }, { fr: "Règlement FIA", en: "FIA regulations" }]
     },
     {
       org: "Mercedes · de Willermin VI",

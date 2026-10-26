@@ -242,6 +242,7 @@
           <h3>${esc(tr(e.org))}</h3>
           <p class="exp-role">${esc(tr(e.role))}</p>
           ${e.intro ? `<p class="exp-intro">${esc(tr(e.intro))}</p>` : ""}
+          ${e.bullets ? `<ul class="exp-bullets">${e.bullets.map(bl => `<li>${esc(tr(bl))}</li>`).join("")}</ul>` : ""}
           ${e.steps ? `<ol class="steps">${e.steps.map(st => `
             <li><span class="step-when mono">${esc(tr(st.when))}</span><strong>${esc(tr(st.title))}</strong><p>${esc(tr(st.text))}</p></li>`).join("")}
           </ol>` : ""}

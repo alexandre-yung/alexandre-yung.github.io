@@ -156,6 +156,9 @@ h1, h2, h3 { line-height: 1.2; margin: 0; letter-spacing: -0.02em; }
 .exp-role { margin: 4px 0 0; font-weight: 500; color: var(--ink-2); }
 .exp-intro { margin: 12px 0 0; color: var(--muted); font-size: 15px; max-width: 760px; }
 .exp .tags { padding-top: 16px; }
+.exp-bullets { margin: 14px 0 0; padding-left: 18px; color: var(--ink-2); font-size: 15px; max-width: 760px; }
+.exp-bullets li { margin-bottom: 8px; }
+.exp-bullets li::marker { color: var(--accent); }
 .steps { list-style: none; margin: 20px 0 0; padding: 0; position: relative; display: flex; flex-direction: column; gap: 18px; }
 .steps::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
 .steps li { position: relative; padding-left: 28px; }
